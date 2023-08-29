@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <script src="login.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,7 @@
                 </div>
 
                 <!-- Submit button -->
-                <input type="submit" value="Entrar"  class="btn btn-primary btn-block mb-4">
+                <input type="submit" value="Entrar" id="login"  class="btn btn-primary btn-block mb-4">
               
                 <!-- Register buttons -->
                 <div class="text-center">

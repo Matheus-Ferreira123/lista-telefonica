@@ -1,20 +1,30 @@
+$(document).ready(function(){
+    $("#login").on('click', function(event){
+        event.preventDefault()
+        login()
+    })
+
+})
+
 function login(event){
-    event.preventDefault()
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
-
-    var data = {username: user, password: pass}
-
-    fetch("config.php", {
+    var login = $("#username").val()
+    var password = $("#password").val()
+    
+    
+    $.ajax({
         method: "POST",
-        
-        body: JSON.stringify(data),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log("Success:", data);
-    })
-    .catch((error) => {
-        console.error("Error:", error);
-    });
+        url: "config.php",
+        data: { username: login, password: password },
+        dataType: "json",
+        success: function(resp){
+            console.log(resp.sucesso)
+            if(resp.sucesso == 1){
+                window.location.href="http://localhost/lista-telefonica"
+                
+            }else {
+                alert("usuario ou senha incorretos")
+            }
+        }
+       })
+
 }
